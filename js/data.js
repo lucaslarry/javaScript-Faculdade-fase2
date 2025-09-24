@@ -14,7 +14,7 @@ export const products = [
     price: 22.5,
     category: "Themed",
     image:
-      "https://postimg.cc/dhw5kJ0T",
+      "https://i.postimg.cc/Hk7RNxD3/unnamed-4.png",
     description:
       "Arr matey! This duck is ready to sail the seven seas of your tub.",
   },
@@ -24,7 +24,7 @@ export const products = [
     price: 25.0,
     category: "Fantasy",
     image:
-      "https://postimg.cc/v4h35C12",
+      "https://i.postimg.cc/5tdTWVfJ/unnamed-2.png",
     description: "A magical and enchanting duck with a rainbow horn.",
   },
   {
@@ -43,7 +43,7 @@ export const products = [
     price: 28.0,
     category: "Sci-Fi",
     image:
-      "https://postimg.cc/XZDLzFkw",
+      "https://i.postimg.cc/5tdTWVfJ/unnamed-2.png",
     description: "One small splash for duck, one giant leap for duck-kind.",
   },
   {
@@ -52,7 +52,7 @@ export const products = [
     price: 19.66,
     category: "Fantasy",
     image:
-      "https://postimg.cc/Yh1XCvtH",
+      "https://i.postimg.cc/pXS3kj7p/unnamed-5.png",
     description: "A devilishly handsome duck for some mischievous fun.",
   },
 ];
