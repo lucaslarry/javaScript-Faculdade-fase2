@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ducks</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/duck.svg" type="image/svg+xml" />
   </head>
   <body>
     <header>
-      <img src="./duck.svg" alt="Duck Logo" />
+      <img src="img/duck.svg" alt="Duck Logo" />
       <div class="filters">
         <input type="search" id="search" placeholder="Search for a duck..." />
         <select id="filter-category">
@@ -22,7 +23,7 @@
       </div>
       <div class="cart-container">
         <button id="cart-button">
-          <img src="./cart.svg" alt="Cart" />
+          <img src="img/cart.svg" alt="Cart" />
         </button>
         <span id="cart-count">0</span>
       </div>
@@ -45,7 +46,7 @@
         <h2>Your Cart</h2>
         <div id="cart-items"></div>
         <div id="cart-footer">
-          <h3 id="cart-total">Total: R$ 0.00</h3>
+          <h3 id="cart-total">Total: $0.00</h3>
           <button id="checkout-button">Checkout</button>
         </div>
       </div>
@@ -58,17 +59,22 @@
         <form id="checkout-form">
           <input
             type="text"
-            id="cep"
-            placeholder="CEP (e.g., 01001000)"
+            id="zipcode"
+            placeholder="ZIP Code (e.g., 90210)"
             required
           />
-          <p id="cep-message"></p>
-          <input type="text" id="rua" placeholder="Street" required />
-          <input type="text" id="numero" placeholder="Number" required />
-          <input type="text" id="bairro" placeholder="Neighborhood" required />
-          <input type="text" id="cidade" placeholder="City" required />
-          <input type="text" id="uf" placeholder="State" required />
-          <button type="submit">Finalize Purchase</button>
+          <p id="zip-message"></p>
+          <input type="text" id="street" placeholder="Street" required />
+          <input type="text" id="number" placeholder="Number" required />
+          <input
+            type="text"
+            id="neighborhood"
+            placeholder="Neighborhood"
+            required
+          />
+          <input type="text" id="city" placeholder="City" required />
+          <input type="text" id="state" placeholder="State" required />
+          <button type="submit">Finish purchase</button>
         </form>
       </div>
     </div>

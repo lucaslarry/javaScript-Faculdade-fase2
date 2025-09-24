@@ -1,5 +1,3 @@
-// js/cart.js
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
@@ -38,11 +36,11 @@ function renderCart() {
 
   if (cart.length === 0) {
     itemsContainer.innerHTML = "<p class='empty-cart'>Your cart is empty.</p>";
-    cartFooter.classList.add("hidden");
+    cartFooter.style.display = "none";
     return;
   }
 
-  cartFooter.classList.remove("hidden");
+  cartFooter.style.display = "flex";
 
   cart.forEach((item) => {
     subtotal += item.price * item.quantity;
@@ -52,7 +50,7 @@ function renderCart() {
       <img class="cart-item-image" src="${item.image}" alt="${item.name}">
       <div class="cart-item-info">
         <p class="cart-item-name">${item.name}</p>
-        <p class="cart-item-price">R$ ${item.price.toFixed(2)}</p>
+        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
       </div>
       <input type="number" class="cart-item-quantity" min="1" value="${
         item.quantity
@@ -75,7 +73,7 @@ function renderCart() {
       .addEventListener("click", () => removeFromCart(item.id));
     itemsContainer.appendChild(div);
   });
-  totalEl.textContent = `Total: R$ ${subtotal.toFixed(2)}`;
+  totalEl.textContent = `Total: $${subtotal.toFixed(2)}`;
 }
 
 export function setupCart() {

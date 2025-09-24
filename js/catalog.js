@@ -1,4 +1,3 @@
-// js/catalog.js
 import { products } from "./data.js";
 import { addToCart } from "./cart.js";
 
@@ -21,17 +20,15 @@ export function renderCatalog() {
     list.forEach((product) => {
       const card = document.createElement("div");
       card.className = "card";
-      // --- ALTERAÇÃO AQUI: Adicionado o container .card-buttons com dois botões ---
       card.innerHTML = `
         <img src="${product.image}" alt="${product.name}" />
         <h3>${product.name}</h3>
-        <p>R$ ${product.price.toFixed(2)}</p>
+        <p>$${product.price.toFixed(2)}</p>
         <div class="card-buttons">
-          <button class="details-btn">Detalhes</button>
-          <button class="buy-btn">Buy</button>
+            <button class="details-btn">Details</button>
+            <button class="buy-btn">Buy</button>
         </div>
       `;
-      // --- ALTERAÇÃO AQUI: Adicionado eventos para os botões específicos ---
       card
         .querySelector(".details-btn")
         .addEventListener("click", () => showProduct(product));
@@ -46,15 +43,14 @@ export function renderCatalog() {
   function showProduct(product) {
     const modal = document.getElementById("product-modal");
     const details = document.getElementById("product-details");
-    // --- ALTERAÇÃO AQUI: Corrigido o HTML do modal para o layout funcionar ---
     details.innerHTML = `
       <img class="product-image" src="${product.image}" alt="${product.name}" />
       <div id="product-details-info">
         <h2>${product.name}</h2>
-        <p><strong>Categoria:</strong> ${product.category}</p>
-        <p><strong>Preço:</strong> R$ ${product.price.toFixed(2)}</p>
+        <p><strong>Category:</strong> ${product.category}</p>
+        <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
         <p>${product.description}</p>
-        <button id="add-to-cart">Adicionar ao Carrinho</button>
+        <button id="add-to-cart">Add to Cart</button>
       </div>
     `;
     details.querySelector("#add-to-cart").addEventListener("click", () => {

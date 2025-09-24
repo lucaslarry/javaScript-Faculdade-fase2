@@ -1,5 +1,3 @@
-// js/data.js
-
 export const products = [
   {
     id: 1,
