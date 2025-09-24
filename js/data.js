@@ -39,11 +39,11 @@ export const products = [
   },
   {
     id: 5,
-    name: "https://i.imgur.com/p8BFN4p.png",
+    name: "Astronaut Duck",
     price: 28.0,
     category: "Sci-Fi",
     image:
-      "https://i.imgur.com/KRE7F0G.png",
+      "https://i.imgur.com/p8BFN4p.png",
     description: "One small splash for duck, one giant leap for duck-kind.",
   },
   {
