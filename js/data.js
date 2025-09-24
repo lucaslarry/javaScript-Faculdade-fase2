@@ -1,29 +1,60 @@
+// js/data.js
+
 export const products = [
   {
     id: 1,
-    name: "Camiseta Azul",
-    price: 59.9,
-    category: "Roupas",
-    description: "Camiseta 100% algodão",
+    name: "Classic Yellow Duck",
+    price: 15.99,
+    category: "Classic",
     image:
-      "https://braskap.com.br/wp-content/uploads/2024/02/CAMISETA-AZUL.jpg",
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description: "The timeless rubber duck, perfect for bath time fun.",
   },
   {
     id: 2,
-    name: "Tênis Esportivo",
-    price: 199.9,
-    category: "Calçados",
-    description: "Confortável para corrida",
+    name: "Pirate Duck",
+    price: 22.5,
+    category: "Themed",
     image:
-      "https://modaum.cdn.magazord.com.br/img/2023/11/produto/774/01-tenis-esportivo-masculino-olympikus-em-tecido-preto.jpeg?ims=600x600",
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description:
+      "Arr matey! This duck is ready to sail the seven seas of your tub.",
   },
   {
     id: 3,
-    name: "Relógio Digital",
-    price: 149.9,
-    category: "Acessórios",
-    description: "Resistente à água",
+    name: "Unicorn Duck",
+    price: 25.0,
+    category: "Fantasy",
     image:
-      "https://cdn.eclock.com.br/media/catalog/product/cache/1/image/1000x/9df78eab33525d08d6e5fb8d27136e95/r/e/relogio-digital-x-watch-masculino-esportivo-xmppd707bxpx-04.jpg",
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description: "A magical and enchanting duck with a rainbow horn.",
+  },
+  {
+    id: 4,
+    name: "Viking Duck",
+    price: 23.75,
+    category: "Themed",
+    image:
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description:
+      "This fierce duck is ready to conquer bath time with its mighty helmet.",
+  },
+  {
+    id: 5,
+    name: "Astronaut Duck",
+    price: 28.0,
+    category: "Sci-Fi",
+    image:
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description: "One small splash for duck, one giant leap for duck-kind.",
+  },
+  {
+    id: 6,
+    name: "Devil Duck",
+    price: 19.66,
+    category: "Fantasy",
+    image:
+      "https://media.istockphoto.com/id/164922078/pt/foto/pato-de-borracha.jpg?s=612x612&w=0&k=20&c=UGwThbBsP8heDOCorGA2lWvmHWK0GW2SIsy6Q1a01pg=",
+    description: "A devilishly handsome duck for some mischievous fun.",
   },
 ];

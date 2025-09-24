@@ -1,3 +1,5 @@
+// js/cart.js
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
@@ -28,33 +30,52 @@ function removeFromCart(id) {
 }
 
 function renderCart() {
-  const items = document.getElementById("cart-items");
-  const total = document.getElementById("cart-total");
-  items.innerHTML = "";
+  const itemsContainer = document.getElementById("cart-items");
+  const totalEl = document.getElementById("cart-total");
+  const cartFooter = document.getElementById("cart-footer");
+  itemsContainer.innerHTML = "";
   let subtotal = 0;
+
+  if (cart.length === 0) {
+    itemsContainer.innerHTML = "<p class='empty-cart'>Your cart is empty.</p>";
+    cartFooter.classList.add("hidden");
+    return;
+  }
+
+  cartFooter.classList.remove("hidden");
+
   cart.forEach((item) => {
     subtotal += item.price * item.quantity;
     const div = document.createElement("div");
+    div.className = "cart-item";
     div.innerHTML = `
-      <p>${item.name} - R$ ${item.price.toFixed(2)} x 
-      <input type="number" min="1" value="${item.quantity}" data-id="${
-      item.id
-    }" /> 
-      <button data-id="${item.id}">Remover</button></p>
+      <img class="cart-item-image" src="${item.image}" alt="${item.name}">
+      <div class="cart-item-info">
+        <p class="cart-item-name">${item.name}</p>
+        <p class="cart-item-price">R$ ${item.price.toFixed(2)}</p>
+      </div>
+      <input type="number" class="cart-item-quantity" min="1" value="${
+        item.quantity
+      }" data-id="${item.id}" /> 
+      <button class="cart-item-remove" data-id="${item.id}">&times;</button>
     `;
-    div.querySelector("input").addEventListener("change", (e) => {
+
+    div.querySelector(".cart-item-quantity").addEventListener("change", (e) => {
       const qty = parseInt(e.target.value);
       const prod = cart.find((p) => p.id === item.id);
-      prod.quantity = qty;
-      saveCart();
-      renderCart();
+      if (qty > 0) {
+        prod.quantity = qty;
+        saveCart();
+        renderCart();
+      }
     });
+
     div
-      .querySelector("button")
-      .addEventListener("click", (e) => removeFromCart(item.id));
-    items.appendChild(div);
+      .querySelector(".cart-item-remove")
+      .addEventListener("click", () => removeFromCart(item.id));
+    itemsContainer.appendChild(div);
   });
-  total.textContent = `Total: R$ ${subtotal.toFixed(2)}`;
+  totalEl.textContent = `Total: R$ ${subtotal.toFixed(2)}`;
 }
 
 export function setupCart() {

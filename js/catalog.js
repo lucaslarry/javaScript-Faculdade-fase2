@@ -1,3 +1,4 @@
+// js/catalog.js
 import { products } from "./data.js";
 import { addToCart } from "./cart.js";
 
@@ -20,15 +21,24 @@ export function renderCatalog() {
     list.forEach((product) => {
       const card = document.createElement("div");
       card.className = "card";
+      // --- ALTERAÇÃO AQUI: Adicionado o container .card-buttons com dois botões ---
       card.innerHTML = `
         <img src="${product.image}" alt="${product.name}" />
         <h3>${product.name}</h3>
         <p>R$ ${product.price.toFixed(2)}</p>
-        <button data-id="${product.id}">Detalhes</button>
+        <div class="card-buttons">
+          <button class="details-btn">Detalhes</button>
+          <button class="buy-btn">Buy</button>
+        </div>
       `;
+      // --- ALTERAÇÃO AQUI: Adicionado eventos para os botões específicos ---
       card
-        .querySelector("button")
+        .querySelector(".details-btn")
         .addEventListener("click", () => showProduct(product));
+      card
+        .querySelector(".buy-btn")
+        .addEventListener("click", () => addToCart(product));
+
       catalog.appendChild(card);
     });
   }
@@ -36,14 +46,17 @@ export function renderCatalog() {
   function showProduct(product) {
     const modal = document.getElementById("product-modal");
     const details = document.getElementById("product-details");
+    // --- ALTERAÇÃO AQUI: Corrigido o HTML do modal para o layout funcionar ---
     details.innerHTML = `
-    <h2>${product.name}</h2>
-    <img class="product-image" src="${product.image}" alt="${product.name}" />
-    <p>Categoria: ${product.category}</p>
-    <p>Preço: R$ ${product.price.toFixed(2)}</p>
-    <p>${product.description}</p>
-    <button id="add-to-cart">Adicionar ao Carrinho</button>
-  `;
+      <img class="product-image" src="${product.image}" alt="${product.name}" />
+      <div id="product-details-info">
+        <h2>${product.name}</h2>
+        <p><strong>Categoria:</strong> ${product.category}</p>
+        <p><strong>Preço:</strong> R$ ${product.price.toFixed(2)}</p>
+        <p>${product.description}</p>
+        <button id="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    `;
     details.querySelector("#add-to-cart").addEventListener("click", () => {
       addToCart(product);
       modal.classList.add("hidden");
