@@ -43,7 +43,7 @@ export const products = [
     price: 28.0,
     category: "Sci-Fi",
     image:
-      "https://i.postimg.cc/5tdTWVfJ/unnamed-2.png",
+      "https://i.postimg.cc/26Ct37qX/unnamed-1.png",
     description: "One small splash for duck, one giant leap for duck-kind.",
   },
   {
